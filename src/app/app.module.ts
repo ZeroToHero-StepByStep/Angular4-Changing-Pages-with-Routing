@@ -14,6 +14,8 @@ import { ServersService } from './servers/servers.service';
 import {RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {AppRoutingMoudle} from './users/app-routing.moudle';
+import {AuthService} from './users/auth.services';
+import {AuthGuard} from './users/auth-gurad.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import {AppRoutingMoudle} from './users/app-routing.moudle';
     HttpModule,
     AppRoutingMoudle
   ],
-  providers: [ServersService],
+  providers: [ServersService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
